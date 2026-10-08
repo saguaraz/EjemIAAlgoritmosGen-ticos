@@ -37,7 +37,7 @@ def mutacion(individuo, tasa_mutacion):
 def algoritmo_genetico():
     tamano_poblacion = 100
     longitud_individuo = 10
-    numero_generaciones = 100
+    numero_generaciones = 50
     tasa_mutacion = 0.01
     k = 5  # Tamaño del torneo
 
@@ -76,9 +76,12 @@ def algoritmo_genetico():
         if aptitud > mejor_aptitud:
             mejor_individuo = individuo
             mejor_aptitud = aptitud
-
     print("El mejor individuo es:", mejor_individuo)
     print("Con una aptitud de:", mejor_aptitud)
+
+    print("Población final:")
+    for individuo in poblacion:
+        print(individuo, "Aptitud:", evaluar_aptitud(individuo))
 
 if __name__ == "__main__":
     algoritmo_genetico()
